@@ -1,0 +1,23 @@
+wget sSL https://get.docker.com | sh
+docker container ls
+
+
+
+
+
+cp target/CloudenabledWebApp.war /var/lib/tomcat9/WebApps/
+
+
+
+
+
+wget -q -o -https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt_key add-
+sh -c 'echo deb http://pkg.jenkins_ci.org/debian-stable binary/> /etc/apt/sources.list.d/jenkins.list
+
+vim /etc/sudoers
+jenkins ALL=(ALL) NOPASSWD:ALL
+
+id jenkins
+usermod -aG admin jenkins
+
+vim /etc/default/jenkins
